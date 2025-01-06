@@ -13,11 +13,10 @@ export default function HowItWorks() {
 
         // Ensure the data structure matches what the table expects
         const formattedData = result.data.map((item) => ({
-          seat: item.seat,       // Map to `seat`
+          seat: item.seat_no,       // Map to `seat`
           price: item.price,     // Map to `price`
           status: item.status,   // Map to `status`
         }));
-
         setTableData(formattedData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -28,14 +27,14 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <div className="py-16 px-4 bg-white">
+    <div className=" relative py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
           How it works
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div className="space-y-8">
+          <div className="z-10 space-y-8">
             <div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Enter your post's title & keyword
@@ -78,8 +77,8 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white">
+          <div className="z-10 overflow-x-auto bg">
+            <table className="w-full border-collapse bg-white ">
               <thead>
                 <tr className="bg-indigo-100">
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
@@ -96,15 +95,11 @@ export default function HowItWorks() {
               <tbody className="divide-y divide-gray-200">
                 {tableData.map((row, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 text-sm text-gray-900">{row.seat}</td>
-                    <td className="px-6 py-4 text-sm text-gray-900">{row.price}</td>
-                    <td className="px-6 py-4 text-sm">
+                    <td className="px-6 py-4 text-xl font-semibold text-gray-900">{row.seat}</td>
+                    <td className="px-6 py-4 text-xl font-semibold text-gray-900">{row.price}</td>
+                    <td className="px-6 py-4 text-xl font-semibold">
                       <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          row.status === "A"
-                            ? "bg-green-100 text-green-800"
-                            : "bg-yellow-100 text-yellow-800"
-                        }`}
+                        className="inline-flex items-center font-semibold px-2.5 py-0.5 rounded-full text-xl font-medium text-black"
                       >
                         {row.status}
                       </span>
@@ -116,6 +111,7 @@ export default function HowItWorks() {
           </div>
         </div>
       </div>
+      <img  className="absolute top-[45%] right-[37%]   h-[300px] w-[300px]" src="Purple_Circle.png" alt="purple circle" />
     </div>
   );
 }

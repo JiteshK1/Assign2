@@ -6,9 +6,9 @@ export function SiteHeader() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="container flex h-20 items-center justify-between">
+    <header className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
       {/* Left section with logo */}
-      <div className="flex w-[150px] items-center gap-2">
+      <div className="flex items-center gap-2">
         <div className="rounded-lg bg-purple-100 p-2">
           <div className="h-6 w-6 text-purple-600">
             <svg
@@ -24,7 +24,7 @@ export function SiteHeader() {
             </svg>
           </div>
         </div>
-        <span className="text-xl text-black font-bold">uiAid</span>
+        <span className="text-xl font-bold text-black">uiAid</span>
       </div>
 
       {/* Center section with navigation */}
@@ -35,19 +35,19 @@ export function SiteHeader() {
       >
         <Link
           href="#"
-          className="text-sm font-semibold text-gray-400 transition-colors hover:text-purple-600"
+          className="text-sm font-semibold text-gray-500 transition-colors hover:text-purple-600"
         >
           About
         </Link>
         <Link
           href="#"
-          className="text-sm font-semibold text-gray-400 transition-colors hover:text-purple-600"
+          className="text-sm font-semibold text-gray-500 transition-colors hover:text-purple-600"
         >
           Work
         </Link>
         <Link
           href="#"
-          className="text-sm font-semibold text-gray-400 transition-colors hover:text-purple-600"
+          className="text-sm font-semibold text-gray-500 transition-colors hover:text-purple-600"
         >
           Research
         </Link>
@@ -74,8 +74,8 @@ export function SiteHeader() {
       </nav>
 
       {/* Right section with login button */}
-      <div className="w-[150px] flex justify-end">
-        <button className="hidden md:block rounded-full border border-violet-300 px-4 py-2 text-sm font-medium text-violet-700 transition-colors hover:bg-gray-50">
+      <div className="hidden md:flex items-center justify-end">
+        <button className="rounded-full border border-violet-300 px-4 py-2 text-sm font-medium text-violet-700 transition-colors hover:bg-gray-50">
           Login
         </button>
       </div>
